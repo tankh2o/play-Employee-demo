@@ -3,19 +3,13 @@ package com.example.playEmployee_27;
 import java.util.List;
 
 public interface EmployeeServiceInterface {
-    //### Шаг 5
-    //    //Реализовать в сервисе три метода, которые принимают в качестве параметров firstName и lastName:
-    //    //1. Добавить сотрудника.
-    //    //2. Удалить сотрудника. remove(int index)
-    //    //3. Найти сотрудника. contains(element) ИЛИ
+    List<Employee> findOutNumberEmployees();
 
-    String getEmployees(Integer number);
+    Employee findEmployees(String firstName, String lastName) throws EmployeeStorageIsFullException;
 
-    String findOutNumberEmployees();
+    String addEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
 
-    Object addEmployee(String firstName, String lastName) throws EmployeeNotFoundException;
+    String removeEmployee(String firstName, String lastName);
 
-    Object removeEmployee(String firstName, String lastName);
-
-    Object containsEmployee(String firstName, String lastName);
+    boolean containsEmployee(String firstName, String lastName);
 }
